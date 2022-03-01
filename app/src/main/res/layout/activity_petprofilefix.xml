@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_height="match_parent"
+    tools:context=".PetProfileFix">
+
+    <LinearLayout
+        android:id="@+id/profilebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="펫 페이지"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+        </TextView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/profilemain"
+        app:layout_constraintTop_toBottomOf="@+id/profilebar"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginStart="10dp"
+                android:id="@+id/recyclerview2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/btn_petprofilefix"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:background="@drawable/button1"
+                    android:text="프로필 수정"></TextView>
+
+
+                <TextView
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:id="@+id/btn_petprofiledelete"
+                    android:layout_width="150dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/button1"
+                    android:text="프로필 삭제"></TextView>
+            </LinearLayout>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/profileline"
+        app:layout_constraintTop_toBottomOf="@id/profilemain"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/colorBackground">
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/profilecount"
+        app:layout_constraintTop_toBottomOf="@id/profileline"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/profileline"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_bcs"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/btn_bcs"
+            app:layout_constraintEnd_toStartOf="@id/btn_feed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileline"
+            tools:ignore="NotSibling"></ImageView>
+
+        <ImageView
+            android:id="@+id/btn_feed"
+            android:src="@drawable/btn_feed"
+            app:layout_constraintTop_toBottomOf="@+id/profileline"
+            app:layout_constraintStart_toEndOf="@+id/btn_bcs"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="20dp"
+            tools:ignore="NotSibling">
+        </ImageView>
+        <ImageView
+            android:id="@+id/btn_foodreport"
+            app:layout_constraintTop_toBottomOf="@+id/btn_bcs"
+            app:layout_constraintEnd_toStartOf="@id/btn_bcsreport"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/btn_foodreport"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="20dp"
+            tools:ignore="NotSibling">
+        </ImageView>
+        <ImageView
+            android:id="@+id/btn_bcsreport"
+            android:src="@drawable/btn_bcsreport"
+            app:layout_constraintTop_toBottomOf="@+id/btn_feed"
+            app:layout_constraintStart_toEndOf="@+id/btn_foodreport"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="20dp"
+            tools:ignore="NotSibling">
+        </ImageView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
